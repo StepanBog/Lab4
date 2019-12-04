@@ -20,6 +20,6 @@ public class StoreActor extends AbstractActor {
         storage.put(res.getPackegeID(),list);
     }
     public void goTest(TestMes test){
-
+        sender().tell();
     }
 }
