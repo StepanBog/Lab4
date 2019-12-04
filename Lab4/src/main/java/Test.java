@@ -1,3 +1,5 @@
 public class Test {
-    private 
+    private Integer packageID;
+    private String jsScript;
+    private String function
 }
