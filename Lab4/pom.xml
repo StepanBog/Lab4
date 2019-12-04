@@ -7,6 +7,13 @@
     <groupId>Lab4</groupId>
     <artifactId>Lab4</artifactId>
     <version>1</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.webjars.npm</groupId>
+            <artifactId>prop-types</artifactId>
+            <version>15.7.2</version>
+        </dependency>
+    </dependencies>
 
 
 </project>
