@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 public class StoreActor extends AbstractActor {
-    private  Map<String, List<String>> 
+    private  Map<Integer, List<String>>
     @Override
     public Receive createReceive() {
         return null;
