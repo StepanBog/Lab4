@@ -1,7 +1,6 @@
 public class ResultMes {
     private Integer packegeID;
-    private String result;
-    private Test test;
+    private ResultTest resTest;
 
     public ResultMes(Integer packegeID, String result, Test test){
         this.packegeID = packegeID;
