@@ -28,6 +28,11 @@
             <artifactId>props-live</artifactId>
             <version>1.0.5</version>
         </dependency>
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-actor_2.11</artifactId>
+            <version>2.5.25</version>
+        </dependency>
     </dependencies>
 
 
