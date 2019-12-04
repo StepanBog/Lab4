@@ -1,4 +1,5 @@
-import com.github.dirkraft.propslive.Props;
+import akka.*;
+import akka.actor.Props;
 
 public class Lab4 {
     public static void main(String[] args){
