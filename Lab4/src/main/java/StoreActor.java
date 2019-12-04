@@ -5,6 +5,12 @@ import java.util.Map;
 public class StoreActor extends AbstractActor {
     private Map<String, String> store = new HashMap<>();
     public Receive createReceive() {
-        return null;
+        ReceiveBuilder.create()
+                .match(StoreMessage.class, m -> {
+                    store.put(m.getKey(), m.getValue());
+                    System.out.println("receive message! "+m.toString());
+                        .match(GetMessage.class, req -> sender().tell(
+                    ).build();
     }
+}
 }
