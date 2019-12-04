@@ -17,6 +17,6 @@ public class StoreActor extends AbstractActor {
 
     }
     public void goTest(TestMes test){
-        
+
     }
 }
