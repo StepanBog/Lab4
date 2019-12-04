@@ -14,7 +14,7 @@ public class StoreActor extends AbstractActor {
     }
 
     public void getResult(ResultMes res){
-
+        storage.put()
     }
     public void goTest(TestMes test){
 
