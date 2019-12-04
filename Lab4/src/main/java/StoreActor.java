@@ -16,5 +16,7 @@ public class StoreActor extends AbstractActor {
     public void getResult(ResultMes res){
 
     }
-    public void goTest(TestMes test)
+    public void goTest(TestMes test){
+        
+    }
 }
