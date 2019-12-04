@@ -13,5 +13,8 @@ public class StoreActor extends AbstractActor {
                 .build();
     }
 
-    public void getResult
+    public void getResult(ResultMes res){
+
+    }
+    public void
 }
