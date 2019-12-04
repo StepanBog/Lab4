@@ -23,6 +23,11 @@
             <artifactId>nuun-configuration-props-plugin</artifactId>
             <version>1.0.M1</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.dirkraft</groupId>
+            <artifactId>props-live</artifactId>
+            <version>1.0.5</version>
+        </dependency>
     </dependencies>
 
 
