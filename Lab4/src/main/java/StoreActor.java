@@ -1,2 +1,2 @@
-public class StoreActor {
+public class StoreActor extends AbstractActor {
 }
