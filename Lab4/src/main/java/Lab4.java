@@ -52,7 +52,7 @@ public class Lab4 {
                     , 5000);
             return completeOKWithFuture(result, Jackson.marshaller());
         })),
-                
+                post()
     }
 }
 }
