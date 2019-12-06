@@ -54,7 +54,7 @@ public class Lab4 {
         })),
                 post(()-> entity(Jackson.unmarshaller(TestPackageMsg.class), msg -> {
                     testPackageActor.tell(msg, ActorRef.noSender());
-                    return complete("Test started!");))
+                    return complete("Test started!");})));
     }
 }
-}
+
