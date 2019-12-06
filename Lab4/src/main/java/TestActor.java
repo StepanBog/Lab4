@@ -18,5 +18,7 @@ public class TestActor extends AbstractActor{
         return invocable.invokeFunction(test.getFunction(), test.getTest().getParams()).toString();
     }
 
-    public void resTest()
+    public void resTest(TestMes test){
+        getSender()
+    }
 }
