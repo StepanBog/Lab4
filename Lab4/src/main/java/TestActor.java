@@ -19,6 +19,6 @@ public class TestActor extends AbstractActor{
     }
 
     public void resTest(TestMes test){
-        getSender()
+        getSender().tell(new );
     }
 }
