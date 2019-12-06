@@ -11,10 +11,12 @@ public class TestActor extends AbstractActor{
         return receiveBuilder()
                 .build();
     }
-    public void doTest(TestMes test) throws ScriptException {
+    public String doTest(TestMes test) throws ScriptException {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
         engine.eval(test.getJsScript());
         Invocable invocable = (Invocable) engine;
         return invocable.invokeFunction(test.getFunction(), test.getTest().getParams()).toString();
     }
+
+    public void resTest()
 }
