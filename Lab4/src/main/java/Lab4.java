@@ -40,8 +40,11 @@ public class Lab4 {
     }
 
     private Route createRoute(ActorSystem system) {
+        routerActor
+
         return (get( () -> {
             Future<Object> result = Patterns.ask(TestActor.class,
                     SemaphoreActor.makeRequest(), 5000);
+        }
     }
 }
