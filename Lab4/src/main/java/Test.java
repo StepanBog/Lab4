@@ -1,5 +1,7 @@
 public class Test {
     private String testName;
-    private 
+    private String expResult;
+    private int[] params;
+    
 
 }
