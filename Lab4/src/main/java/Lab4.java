@@ -53,8 +53,9 @@ public class Lab4 {
             return completeOKWithFuture(result, Jackson.marshaller());
         })),
                 post(()-> entity(Jackson.unmarshaller(TestPackageMsg.class), msg -> {
-                    testPackageActor.tell(msg, ActorRef.noSender());
-                    return complete("Test started!");})));
+                    routerActor.tell(msg, ActorRef.noSender());
+                    return complete("Test started!");
+                })));
     }
 }
 
