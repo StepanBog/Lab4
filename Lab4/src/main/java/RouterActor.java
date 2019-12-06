@@ -16,4 +16,5 @@ public class RouterActor extends AbstractActor{
                 .match()
                 .build();
     }
+    public getTest()
 }
