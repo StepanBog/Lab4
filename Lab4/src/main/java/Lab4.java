@@ -43,12 +43,11 @@ public class Lab4 {
     }
 
     private Route createRoute(ActorSystem system) {
-        return route(path("lab4",()->
-                route(get(() -> {
+        return get(() -> {
             Future<Object> result = Patterns.ask(TestActor.class,
                     , 5000);
             return completeOKWithFuture(result, Jackson.marshaller());
-        }))));
+        });
     }
 }
 }
