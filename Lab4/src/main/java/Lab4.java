@@ -50,7 +50,7 @@ public class Lab4 {
         routerActor = system.actorOf(Props.create(RouterActor.class));
         return concat(get(() ->
             parameter("packageId",Id ->{
-            Future<Object> result = Patterns.ask(TestActor.class,
+            Future<Object> result = Patterns.ask(TestActor.class,Id
                     , 5000);
             return completeOKWithFuture(result, Jackson.marshaller());
         })),
