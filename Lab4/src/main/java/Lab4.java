@@ -1,5 +1,7 @@
 import akka.NotUsed;
+import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
+import akka.actor.Props;
 import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
@@ -15,8 +17,7 @@ import java.io.IOException;
 import java.util.concurrent.CompletionStage;
 import java.util.concurrent.Future;
 
-import static akka.http.javadsl.server.Directives.completeOKWithFuture;
-import static akka.http.javadsl.server.Directives.get;
+import static akka.http.javadsl.server.Directives.*;
 
 
 public class Lab4 {
@@ -44,12 +45,14 @@ public class Lab4 {
     }
 
     private Route createRoute(ActorSystem system) {
-        return get(() ->
-        {
+        ActorRef routerActor = system.actorOf(Props.create(RouterActor.class));
+        return concat(get(() ->
+            parameter("packageId",Id ->{
             Future<Object> result = Patterns.ask(TestActor.class,
                     , 5000);
             return completeOKWithFuture(result, Jackson.marshaller());
-        });
+        })),
+                
     }
 }
 }
