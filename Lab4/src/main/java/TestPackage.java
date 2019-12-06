@@ -5,5 +5,5 @@ public class TestPackage {
     private String jsScript;
     private String funcName;
     private Test[] tests;
-    
+
 }
