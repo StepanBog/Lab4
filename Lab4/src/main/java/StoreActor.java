@@ -12,7 +12,7 @@ public class StoreActor extends AbstractActor {
     public Receive createReceive() {
         return receiveBuilder()
                 .match(ResultMes.class,this::getResult)
-                .match()
+                .match(TestMes)
                 .build();
     }
 
