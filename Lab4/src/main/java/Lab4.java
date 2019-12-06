@@ -42,6 +42,6 @@ public class Lab4 {
     private Route createRoute(ActorSystem system) {
         return (get( () -> {
             Future<Object> result = Patterns.ask(TestActor.class,
-                    S, 5000);
+                    new TestMes(), 5000);
     }
 }
