@@ -1,4 +1,4 @@
-public class TestPackageMsg {
+public class TestPackage {
     private Integer packageID;
 
     public TestPackageMsg(Integer packageID) {
