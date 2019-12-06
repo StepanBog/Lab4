@@ -48,6 +48,7 @@ public class Lab4 {
                 route(get( () -> {
             Future<Object> result = Patterns.ask(TestActor.class,
                     SemaphoreActor.makeRequest(), 5000);
+            return 
         }
     }
 }
