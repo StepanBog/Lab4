@@ -9,11 +9,12 @@ import akka.http.javadsl.server.Route;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 
+import java.io.IOException;
 import java.util.concurrent.CompletionStage;
 
 
 public class Lab4 {
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
         ActorSystem system = ActorSystem.create("lab4");
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
@@ -25,6 +26,11 @@ public class Lab4 {
                 ConnectHttp.toHost("localhost", 8080),
                 materializer
         );
+        System.out.println("Server online at http://localhost:8080/\nPress RETURN to stop...");
+        System.in.read();
+        binding
+                .thenCompose(ServerBinding::unbind)
+                .thenAccept(unbound -> system.terminate());
 
     }
 
