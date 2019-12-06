@@ -1,5 +1,6 @@
 import akka.NotUsed;
 import akka.actor.ActorSystem;
+import akka.actor.Props;
 import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
@@ -40,7 +41,7 @@ public class Lab4 {
     }
 
     private Route createRoute(ActorSystem system) {
-
+        routActor = system.actorOf(Props.create(RouterActor.class))
         return (get( () -> {
             Future<Object> result = Patterns.ask(TestActor.class,
                     SemaphoreActor.makeRequest(), 5000);
