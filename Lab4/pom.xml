@@ -1,211 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>Lab4</groupId>
-    <artifactId>Lab4</artifactId>
-    <version>1</version>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>8</source>
-                    <target>8</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+    <groupId>akka-labs</groupId>
+    <artifactId>akka-labs</artifactId>
+    <packaging>jar</packaging>
+    <version>0.1.0-SNAPSHOT</version>
+    <properties>
+        <akka.version>2.5.26</akka.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <akka-http.version>10.1.10</akka-http.version>
+    </properties>
     <dependencies>
         <dependency>
-            <groupId>org.webjars.npm</groupId>
-            <artifactId>prop-types</artifactId>
-            <version>15.7.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.webjars.npm</groupId>
-            <artifactId>prop-types</artifactId>
-            <version>15.7.2</version>
-        </dependency>
-        <dependency>
-            <groupId>io.nuun</groupId>
-            <artifactId>nuun-configuration-props-plugin</artifactId>
-            <version>1.0.M1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.dirkraft</groupId>
-            <artifactId>props-live</artifactId>
-            <version>1.0.5</version>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-actor_2.12</artifactId>
+            <version>${akka.version}</version>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-actor_2.11</artifactId>
-            <version>2.5.25</version>
+            <artifactId>akka-slf4j_2.12</artifactId>
+            <version>${akka.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-http_2.12</artifactId>
-            <version>10.1.9</version>
-        </dependency>
-        <dependency>
-            <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-http-core_2.11</artifactId>
-            <version>10.1.9</version>
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish.grizzly</groupId>
-            <artifactId>grizzly-http-server</artifactId>
-            <version>2.4.4</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.http-client</groupId>
-            <artifactId>google-http-client</artifactId>
-            <version>1.32.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.webjars.npm</groupId>
-            <artifactId>material__feature-targeting</artifactId>
-            <version>0.44.1</version>
-        </dependency>
+
         <dependency>
             <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-stream_2.12</artifactId>
-            <version>2.6.0-M7</version>
+            <version>${akka.version}</version>
         </dependency>
+
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-stream_2.12</artifactId>
-            <version>2.6.0-M7</version>
+            <artifactId>akka-stream-testkit_2.12</artifactId>
+            <version>${akka.version}</version>
         </dependency>
+
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-stream_2.12</artifactId>
-            <version>2.6.0-M7</version>
+            <artifactId>akka-testkit_2.12</artifactId>
+            <version>${akka.version}</version>
         </dependency>
+
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-http_2.12</artifactId>
-            <version>10.1.9</version>
+            <artifactId>akka-http-core_2.12</artifactId>
+            <version>${akka-http.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-http_2.12</artifactId>
-            <version>10.1.9</version>
-        </dependency>
-        <dependency>
-            <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-stream_2.13</artifactId>
-            <version>2.6.0-M7</version>
-        </dependency>
-        <dependency>
-            <groupId>de.dani09</groupId>
-            <artifactId>dani-http</artifactId>
-            <version>0.4.2</version>
-        </dependency>
+
         <dependency>
             <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-http_2.12</artifactId>
-            <version>10.1.9</version>
+            <version>${akka-http.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.webjars.npm</groupId>
-            <artifactId>readable-stream</artifactId>
-            <version>3.4.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.10.0.pr3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-core-asl</artifactId>
-            <version>1.9.13</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.datatype</groupId>
-            <artifactId>jackson-datatype-jdk8</artifactId>
-            <version>2.10.0.pr2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.10.0.pr3</version>
-        </dependency>
+
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-http_2.11</artifactId>
-            <version>10.0.15</version>
+            <artifactId>akka-http-testkit_2.12</artifactId>
+            <version>${akka-http.version}</version>
         </dependency>
+
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-actor_2.11</artifactId>
-            <version>2.5.22</version>
+            <artifactId>akka-http-spray-json_2.12</artifactId>
+            <version>${akka-http.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.10.0.pr3</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.10.0.pr3</version>
-        </dependency>
+
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-http_2.12</artifactId>
-            <version>10.1.9</version>
+            <artifactId>akka-http-jackson_2.12</artifactId>
+            <version>${akka-http.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.10.0.pr3</version>
-        </dependency>
+
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-http_2.12</artifactId>
-            <version>10.1.9</version>
+            <artifactId>akka-http-xml_2.12</artifactId>
+            <version>${akka-http.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-stream_2.11</artifactId>
-            <version>2.5.25</version>
-        </dependency>
-        <dependency>
-            <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-actor_2.11</artifactId>
-            <version>2.5.25</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.10.0.pr3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-core-asl</artifactId>
-            <version>1.9.13</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.datatype</groupId>
-            <artifactId>jackson-datatype-jsr310</artifactId>
-            <version>2.10.0.pr2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-http_2.12</artifactId>
-            <version>10.1.9</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.http-client</groupId>
-            <artifactId>google-http-client</artifactId>
-            <version>1.32.0</version>
-        </dependency>
+
     </dependencies>
-
-
 </project>
