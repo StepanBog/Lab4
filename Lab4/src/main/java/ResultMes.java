@@ -2,7 +2,7 @@ public class ResultMes {
     private Integer packegeID;
     private ResultTest resTest;
 
-    public ResultMes(Integer packegeID, ResultTest test){
+    public ResultMes(TestRes packegeID, Integer test){
         this.packegeID = packegeID;
         this.resTest = test;
     }

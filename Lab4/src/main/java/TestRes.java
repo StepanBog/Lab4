@@ -1,4 +1,9 @@
 public class TestRes {
-    public TestRes(String s, Object p1) {
+    private String answer;
+    private Test test;
+    public TestRes(String answer, Test test) {
+        this.answer = answer;
+        this.test = test;
     }
+
 }
