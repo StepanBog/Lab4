@@ -46,7 +46,7 @@ public class Lab4 {
         return route(path("lab4",()->
                 route(get(() -> {
             Future<Object> result = Patterns.ask(TestActor.class,
-                    SemaphoreActor.makeRequest(), 5000);
+                    , 5000);
             return completeOKWithFuture(result, Jackson.marshaller());
         }))));
     }
