@@ -38,6 +38,11 @@
             <artifactId>akka-http_2.12</artifactId>
             <version>10.1.9</version>
         </dependency>
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-http-core_2.11</artifactId>
+            <version>10.1.9</version>
+        </dependency>
     </dependencies>
 
 
