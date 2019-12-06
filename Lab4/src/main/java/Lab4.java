@@ -14,7 +14,7 @@ public class Lab4 {
         ActorSystem system = ActorSystem.create("lab4");
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
-        AkkaMain instance = new AkkaMain(system);
+        AkkaMain instance = new AkkaMain();
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
                 instance.createRoute(system).flow(system, materializer);
 
