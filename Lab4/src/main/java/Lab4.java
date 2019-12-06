@@ -6,11 +6,13 @@ import akka.http.javadsl.ServerBinding;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.server.Route;
+import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 
 import java.io.IOException;
 import java.util.concurrent.CompletionStage;
+import java.util.concurrent.Future;
 
 
 public class Lab4 {
@@ -38,8 +40,8 @@ public class Lab4 {
     }
 
     private Route createRoute(ActorSystem system) {
-        get( () -> {
-            Future<Object> result = Patterns.ask(testPackageActor,
-                    SemaphoreActor.makeRequest(), 5000);
+        return (get( () -> {
+            Future<Object> result = Patterns.ask(TestActor.class,
+                    S, 5000);
     }
 }
