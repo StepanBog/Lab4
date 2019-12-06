@@ -7,7 +7,8 @@ public class RouterActor extends AbstractActor{
     private ActorRef testactor;
 
     public void RouterActor(){
-        this.storeActor = getContext().actorOf(Props.create(StoreActor.class),storeActor)
+        this.storeActor = getContext().actorOf(Props.create(StoreActor.class),"storeActor");
+        this.testactor = getContext().actorOf(Props.create(TestActor.))
     }
     public AbstractActor.Receive createReceive() {
         return receiveBuilder()
