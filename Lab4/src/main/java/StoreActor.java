@@ -11,7 +11,7 @@ public class StoreActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(goTest())
+                .match(R)
                 .build();
     }
 
