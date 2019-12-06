@@ -7,4 +7,7 @@ public class TestActor extends AbstractActor{
         return receiveBuilder()
                 .build();
     }
+    public void doTest(Test test){
+        
+    }
 }
