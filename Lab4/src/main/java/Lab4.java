@@ -21,6 +21,7 @@ import static akka.http.javadsl.server.Directives.*;
 
 
 public class Lab4 {
+    private ActorRef routerActor;
     public Lab4(ActorSystem system) {
     }
 
