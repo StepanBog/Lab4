@@ -1,6 +1,8 @@
 import akka.actor.AbstractActor;
 
-public class TestActor {
+import java.security.cert.CertPathBuilder;
+
+public class TestActor extends AbstractActor{
     public AbstractActor.Receive createReceive() {
         return receiveBuilder()
                 .build();
