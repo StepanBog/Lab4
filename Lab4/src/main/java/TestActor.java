@@ -1,5 +1,4 @@
 import akka.actor.AbstractActor;
-import akka.actor.ActorRef;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
@@ -20,6 +19,6 @@ public class TestActor extends AbstractActor{
     }
 
     public void resTest(TestMes test) throws ScriptException {
-        getSender().tell(new ResultMes(new TestRes(doTest(test),test.getTest()),test.getPackageID()), ActorRef.noSender());
+        getSender().tell(new ResultMes(new TestRes(doTest(test),test.getTest()),test.getPackageID()));
     }
 }
