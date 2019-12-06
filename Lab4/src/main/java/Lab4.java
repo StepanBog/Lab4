@@ -14,11 +14,14 @@ import java.util.concurrent.CompletionStage;
 
 
 public class Lab4 {
+    public Lab4(ActorSystem system) {
+    }
+
     public static void main(String[] args) throws IOException {
         ActorSystem system = ActorSystem.create("lab4");
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
-        Lab4 instance = new Lab4();
+        Lab4 instance = new Lab4(system);
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
                 instance.createRoute(system).flow(system, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
