@@ -11,7 +11,8 @@ public class StoreActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(R)
+                .match(ResultMes.class,this::getResult)
+                .match()
                 .build();
     }
 
