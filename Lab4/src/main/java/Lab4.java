@@ -30,7 +30,7 @@ public class Lab4 {
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         Lab4 instance = new Lab4(system);
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
-                instance.createRoute(system).flow(system, materializer);
+                instance.createRoute().flow(system, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
                 ConnectHttp.toHost("localhost", 8080),
@@ -44,8 +44,9 @@ public class Lab4 {
 
     }
 
-    private Route createRoute(ActorSystem system) {
-        ActorRef routerActor = system.actorOf(Props.create(RouterActor.class));
+    private Route createRoute() {
+        ActorSystem system = ActorSystem.create("lab4");
+        routerActor = system.actorOf(Props.create(RouterActor.class));
         return concat(get(() ->
             parameter("packageId",Id ->{
             Future<Object> result = Patterns.ask(TestActor.class,
