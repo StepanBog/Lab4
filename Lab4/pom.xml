@@ -58,6 +58,11 @@
             <artifactId>material__feature-targeting</artifactId>
             <version>0.44.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-stream_2.12</artifactId>
+            <version>2.6.0-M7</version>
+        </dependency>
     </dependencies>
 
 
