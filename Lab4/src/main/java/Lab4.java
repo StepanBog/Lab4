@@ -15,6 +15,9 @@ import java.io.IOException;
 import java.util.concurrent.CompletionStage;
 import java.util.concurrent.Future;
 
+import static akka.http.javadsl.server.Directives.path;
+import static akka.http.javadsl.server.Directives.route;
+
 
 public class Lab4 {
     public Lab4(ActorSystem system) {
@@ -41,10 +44,11 @@ public class Lab4 {
     }
 
     private Route createRoute(ActorSystem system) {
-        routActor = system.actorOf(Props.create(RouterActor.class))
-        return (get( () -> {
+        return route(path("lab4",()->
+                route(get( () -> {
             Future<Object> result = Patterns.ask(TestActor.class,
                     SemaphoreActor.makeRequest(), 5000);
         }
     }
+}
 }
