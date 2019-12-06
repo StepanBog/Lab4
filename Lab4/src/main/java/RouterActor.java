@@ -1,6 +1,7 @@
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.actor.Props;
+import akka.routing.RoundRobinPool;
 
 public class RouterActor extends AbstractActor{
     private ActorRef storeActor;
@@ -8,7 +9,7 @@ public class RouterActor extends AbstractActor{
 
     public void RouterActor(){
         this.storeActor = getContext().actorOf(Props.create(StoreActor.class),"storeActor");
-        this.testactor = getContext().actorOf(Props.create(TestActor.))
+        this.testactor = getContext().actorOf(new RoundRobinPool(5).props(Props.create(TestActor.class)), "testActor");
     }
     public AbstractActor.Receive createReceive() {
         return receiveBuilder()
