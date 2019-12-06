@@ -52,7 +52,9 @@ public class Lab4 {
                     , 5000);
             return completeOKWithFuture(result, Jackson.marshaller());
         })),
-                post(()-> e))
+                post(()-> entity(Jackson.unmarshaller(TestPackageMsg.class), msg -> {
+                    testPackageActor.tell(msg, ActorRef.noSender());
+                    return complete("Test started!");))
     }
 }
 }
