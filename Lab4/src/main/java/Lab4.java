@@ -17,6 +17,11 @@ public class Lab4 {
         MainHttp instance = new MainHttp();
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
                 instance.createRoute(system).flow(system, materializer);
+        final CompletionStage<ServerBinding> binding = http.bindAndHandle(
+                routeFlow,
+                ConnectHttp.toHost("localhost", 8080),
+                materializer
+        );
 
     }
 }
