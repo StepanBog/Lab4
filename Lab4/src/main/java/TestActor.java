@@ -11,7 +11,7 @@ public class TestActor extends AbstractActor{
         return receiveBuilder()
                 .build();
     }
-    public String doTest(TestMes test) throws ScriptException {
+    public String doTest(TestMes test) throws ScriptException, NoSuchMethodException {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
         engine.eval(test.getJsScript());
         Invocable invocable = (Invocable) engine;
