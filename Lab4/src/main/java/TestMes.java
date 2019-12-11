@@ -9,4 +9,13 @@ public class TestMes {
         this.packageID = packageID;
         this.funcName = funcName;
     }
+
+    public String getJsScript() {
+    }
+
+    public String getFunction() {
+    }
+
+    public Test getTest() {
+    }
 }
