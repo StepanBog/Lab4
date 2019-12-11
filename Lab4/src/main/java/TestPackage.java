@@ -7,7 +7,10 @@ public class TestPackage {
     private Test[] tests;
 
     public TestPackage(Integer packageID, String jsScript,String funcName, Test[] tests){
-        
+       this.funcName = funcName;
+       this.jsScript = jsScript;
+       this.funcName = funcName;
+       this.tests = tests;
     }
 
 }
