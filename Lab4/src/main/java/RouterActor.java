@@ -18,7 +18,7 @@ public class RouterActor extends AbstractActor{
                 .build();
     }
     public void getTest(TestPackageMsg message){
-        getSender().tell();
+        getSender().tell(new TestAnswer);
 
     }
     private void runTest(TestPackage testPackage){
