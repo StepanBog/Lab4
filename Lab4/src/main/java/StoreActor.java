@@ -28,6 +28,6 @@ public class StoreActor extends AbstractActor {
         }
     }
     public void getResult(TestPackageMsg testPackageMsg){
-       getSender().tell();
+       getSender().tell(new TestAnswer(testPackageMsg.getPackageID(), storage.get(testPackageMsg.getPackageID())));
     }
 }
