@@ -11,11 +11,14 @@ public class TestMes {
     }
 
     public String getJsScript() {
+        return jsScript;
     }
 
     public String getFunction() {
+        return funcName;
     }
 
     public Test getTest() {
+        return test;
     }
 }
