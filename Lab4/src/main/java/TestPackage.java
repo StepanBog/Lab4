@@ -6,7 +6,7 @@ public class TestPackage {
     private String jsScript;
     private String funcName;
     private Test[] tests;
-
+    
     public TestPackage(@JsonProperty("packageID")Integer packageID, @JsonProperty("jsScript")String jsScript,@JsonProperty("funcName") String funcName, @JsonProperty("tests")Test[] tests){
        this.funcName = funcName;
        this.jsScript = jsScript;
