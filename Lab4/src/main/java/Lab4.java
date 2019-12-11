@@ -45,7 +45,7 @@ public class Lab4 {
 
     }
 
-    
+
     private Route createRoute() {
         ActorSystem system = ActorSystem.create("lab4");
         routerActor = system.actorOf(Props.create(RouterActor.class));
