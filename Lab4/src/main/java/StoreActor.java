@@ -8,7 +8,10 @@ import java.util.List;
 import java.util.Map;
 public class StoreActor extends AbstractActor {
     private  Map<Integer, List<ResultTest>> storage = new HashMap<>();
+    
+    public StoreActor(){
 
+    }
     @Override
     public Receive createReceive() {
         return receiveBuilder()

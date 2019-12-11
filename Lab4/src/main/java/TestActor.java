@@ -8,11 +8,15 @@ import javax.script.ScriptException;
 import java.security.cert.CertPathBuilder;
 
 public class TestActor extends AbstractActor{
+    public TestActor(){
+
+    }
     public AbstractActor.Receive createReceive() {
         return receiveBuilder()
                 .match(TestMes.class, this :: resTest)
                 .build();
     }
+
     public String doTest(TestMes test) throws ScriptException, NoSuchMethodException {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
         engine.eval(test.getJsScript());
