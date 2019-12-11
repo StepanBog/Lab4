@@ -9,10 +9,9 @@ import java.security.cert.CertPathBuilder;
 public class TestActor extends AbstractActor{
     public AbstractActor.Receive createReceive() {
         return receiveBuilder()
-                .match(TestPackage.class, this :: doTest)
                 .build();
     }
-    public String doTest(TestPackage test) throws ScriptException, NoSuchMethodException {
+    public String doTest(TestMes test) throws ScriptException, NoSuchMethodException {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
         engine.eval(test.getJsScript());
         Invocable invocable = (Invocable) engine;
