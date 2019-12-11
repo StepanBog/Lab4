@@ -20,6 +20,6 @@ public class TestActor extends AbstractActor{
     }
 
     public void resTest(TestMes test) throws ScriptException {
-        getSender().tell(ResultTest);
+        getSender().tell( new ResultMes());
     }
 }

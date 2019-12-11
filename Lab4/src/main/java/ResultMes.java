@@ -1,8 +1,8 @@
 public class ResultMes {
     private Integer packegeID;
-    private ResultTest resTest;
+    private Test resTest;
 
-    public ResultMes(TestRes packegeID,  test){
+    public ResultMes(Integer packegeID, Test  test){
         this.packegeID = packegeID;
         this.resTest = test;
     }
@@ -11,7 +11,7 @@ public class ResultMes {
         return packegeID;
     }
 
-    public ResultTest getResTest() {
+    public Test getResTest() {
         return resTest;
     }
 }
