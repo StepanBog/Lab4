@@ -19,7 +19,7 @@ public class TestActor extends AbstractActor{
         return invocable.invokeFunction(test.getFunction(), test.getTest().getParams()).toString();
     }
 
-    public void resTest(TestMes test) throws ScriptException {
-        getSender().tell( new ResultMes(new ResultMes(), test.getPackageID()));
+    public void resTest(TestMes test) throws ScriptException, NoSuchMethodException {
+        getSender().tell( new ResultMes(new ResultMes(test.getTest(),doTest(test)), test.getPackageID()));
     }
 }
