@@ -1,3 +1,4 @@
+import com.fasterxml.jackson.annotation.JsonProperty;
 import scala.Int;
 
 public class TestPackage {
@@ -6,7 +7,7 @@ public class TestPackage {
     private String funcName;
     private Test[] tests;
 
-    public TestPackage(Integer packageID, String jsScript,String funcName, Test[] tests){
+    public TestPackage(@JsonProperty"" Integer packageID, String jsScript, String funcName, Test[] tests){
        this.funcName = funcName;
        this.jsScript = jsScript;
        this.funcName = funcName;
