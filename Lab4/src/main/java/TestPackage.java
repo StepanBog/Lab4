@@ -9,7 +9,7 @@ public class TestPackage {
     private Test[] tests;
     @JsonCreator
     public TestPackage(@JsonProperty("packageId")Integer packageID, @JsonProperty("jsScript")String jsScript,@JsonProperty("functionName") String funcName, @JsonProperty("tests")Test[] tests){
-       this.funcName = funcName;
+       this.packageID = packageID;
        this.jsScript = jsScript;
        this.funcName = funcName;
        this.tests = tests;
