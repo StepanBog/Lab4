@@ -21,7 +21,7 @@ public class RouterActor extends AbstractActor{
     }
     private void runTest(TestPackage testPackage){
         for (Test test: testPackage.getTests()) {
-            TestMes message = new TestMes (test.)
+            TestMes message = new TestMes (test.get)
         }
     }
 }
