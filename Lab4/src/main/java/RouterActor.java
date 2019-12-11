@@ -9,7 +9,7 @@ public class RouterActor extends AbstractActor{
 
     public void RouterActor(){
         this.storeActor = getContext().actorOf(Props.create(StoreActor.class),"storeActor");
-        this.testActors = getContext().actorOf(new RoundRobinPool(5).props(Props.create(TestActor.class)), "testActor");
+        this.testActors = getContext().actorOf(new RoundRobinPool(5).props(Props.create(TestActor.class)), "testActors");
     }
     public AbstractActor.Receive createReceive() {
         return receiveBuilder()
