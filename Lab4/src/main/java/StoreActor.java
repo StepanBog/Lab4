@@ -6,20 +6,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 public class StoreActor extends AbstractActor {
-    private  Map<Integer, List<ResultMes>> storage = new HashMap<>();
+    private  Map<Integer, List<ResultTest>> storage = new HashMap<>();
 
     @Override
     public Receive createReceive() {
         return receiveBuilder()
                 .match(ResultMes.class,this::inputResult)
-                .match(TestMes.class,this::goTest)
+                .match()
                 .build();
     }
 
     public void inputResult(ResultMes res){
         if (storage.containsKey(res.getPackageID())) {
-            List<ResultMes> list = storage.get(res.getPackageID());
-
+            List<ResultTest> list = storage.get(res.getPackageID());
+            list.add(res.getResTest());
         }
         else {
             List<ResultTest> list = new ArrayList<>();
