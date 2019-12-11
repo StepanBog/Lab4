@@ -22,14 +22,15 @@ public class TestActor extends AbstractActor{
             ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
             engine.eval(test.getJsScript());
             Invocable invocable = (Invocable) engine;
-        return invocable.invokeFunction(test.getFunction(), test.getTest().getParams()).toString();
+            String res = invocable.invokeFunction(test.getFunction(), test.getTest().getParams()).toString();
+        return res;
         }catch (Exception er){
             return er.toString();
         }
     }
 
     public void resTest(TestMes test) throws ScriptException, NoSuchMethodException {
-        String res = doTest(test);
-        getSender().tell( new ResultMes(new ResultTest(test.getTest(),res), test.getPackageID()), ActorRef.noSender());
+
+        getSender().tell( new ResultMes(new ResultTest(test.getTest(),doTest(test)), test.getPackageID()), ActorRef.noSender());
     }
 }
