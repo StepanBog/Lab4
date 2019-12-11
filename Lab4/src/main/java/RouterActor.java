@@ -7,7 +7,8 @@ public class RouterActor extends AbstractActor{
     private ActorRef storeActor;
     private ActorRef testActors;
 
-    public void RouterActor(){
+
+    public RouterActor(){
         this.storeActor = getContext().actorOf(Props.create(StoreActor.class),"storeActor");
         this.testActors = getContext().actorOf(new RoundRobinPool(5).props(Props.create(TestActor.class)), "testActors");
     }
