@@ -21,4 +21,8 @@ public class TestMes {
     public Test getTest() {
         return test;
     }
+
+    public Test getPackageID() {
+        return  packageID;
+    }
 }
