@@ -7,4 +7,5 @@ public class TestAnswer {
         this.packageID = packageID;
         this.resultTests = resultTests;
     }
+    
 }
