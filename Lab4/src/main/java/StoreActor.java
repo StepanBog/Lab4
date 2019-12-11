@@ -27,7 +27,7 @@ public class StoreActor extends AbstractActor {
             storage.put(res.getPackageID(), list);
         }
     }
-    public void goTest(TestMes test){
+    public void getResult(TestPackageMsg testPackageMsg){
         sender().tell();
     }
 }
