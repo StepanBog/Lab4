@@ -13,4 +13,19 @@ public class TestPackage {
        this.tests = tests;
     }
 
+    public Integer getPackageID() {
+        return packageID;
+    }
+
+    public String getFuncName() {
+        return funcName;
+    }
+
+    public String getJsScript() {
+        return jsScript;
+    }
+
+    public Test[] getTests() {
+        return tests;
+    }
 }
