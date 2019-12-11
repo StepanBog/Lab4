@@ -9,7 +9,7 @@ import java.security.cert.CertPathBuilder;
 public class TestActor extends AbstractActor{
     public AbstractActor.Receive createReceive() {
         return receiveBuilder()
-                .match(TestMes.class, this :: doTest)
+                .match(TestMes.class, this :: resTest)
                 .build();
     }
     public String doTest(TestMes test) throws ScriptException, NoSuchMethodException {
@@ -20,6 +20,6 @@ public class TestActor extends AbstractActor{
     }
 
     public void resTest(TestMes test) throws ScriptException {
-
+        
     }
 }
