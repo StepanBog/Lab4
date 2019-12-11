@@ -1,4 +1,5 @@
 import akka.actor.AbstractActor;
+import akka.actor.ActorRef;
 import akka.japi.pf.ReceiveBuilder;
 
 import java.util.ArrayList;
@@ -28,6 +29,6 @@ public class StoreActor extends AbstractActor {
         }
     }
     public void getResult(TestPackageMsg testPackageMsg){
-       getSender().tell(new TestAnswer(testPackageMsg.getPackageID(), storage.get(testPackageMsg.getPackageID())));
+       getSender().tell(new TestAnswer(testPackageMsg.getPackageID(), storage.get(testPackageMsg.getPackageID())), ActorRef.noSender());
     }
 }
