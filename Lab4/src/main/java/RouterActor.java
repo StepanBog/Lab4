@@ -20,7 +20,7 @@ public class RouterActor extends AbstractActor{
 
     }
     private void runTest(TestPackage testPackage){
-        for (test:
+        for (Test test: 
              ) {
             
         }
