@@ -5,11 +5,11 @@ import akka.routing.RoundRobinPool;
 
 public class RouterActor extends AbstractActor{
     private ActorRef storeActor;
-    private ActorRef testactor;
+    private ActorRef testactors;
 
     public void RouterActor(){
         this.storeActor = getContext().actorOf(Props.create(StoreActor.class),"storeActor");
-        this.testactor = getContext().actorOf(new RoundRobinPool(5).props(Props.create(TestActor.class)), "testActor");
+        this.testactors = getContext().actorOf(new RoundRobinPool(5).props(Props.create(TestActor.class)), "testActor");
     }
     public AbstractActor.Receive createReceive() {
         return receiveBuilder()
@@ -22,7 +22,7 @@ public class RouterActor extends AbstractActor{
     private void runTest(TestPackage testPackage){
         for (Test test: testPackage.getTests()) {
             TestMes message = new TestMes (testPackage.getPackageID(),testPackage.getFuncName(),testPackage.getJsScript(), test);
-            this.testactor
+            this.testactors.tell(TestMes.class,);
         }
     }
 }
