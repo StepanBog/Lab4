@@ -16,7 +16,7 @@ public class RouterActor extends AbstractActor{
                 .match(TestPackage.class , this :: runTest)
                 .build();
     }
-    public getTest(){
+    public void getTest(){
 
     }
     private void runTest(TestPackage testPackage){
