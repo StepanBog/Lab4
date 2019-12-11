@@ -4,15 +4,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Test {
     private String testName;
     private String expResult;
-    private int[] params;
+    private Object[] params;
     @JsonCreator
-    public Test(@JsonProperty("testName")String testName,@JsonProperty("expectedResult") String expResult, @JsonProperty("params")int[] params){
+    public Test(@JsonProperty("testName")String testName,@JsonProperty("expectedResult") String expResult, @JsonProperty("params")Object[] params){
         this.expResult = expResult;
         this.params = params;
         this.testName = testName;
     }
 
-    public int[] getParams() {
+    public Object[] getParams() {
         return params;
     }
 
