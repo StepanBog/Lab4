@@ -2,7 +2,7 @@ public class ResultTest {
     private String result;
     private Test test;
 
-    public ResultTest(String res, Test test){
+    public ResultTest(Test test,String res){
         result = res;
         this.test = test;
     }

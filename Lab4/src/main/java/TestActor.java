@@ -20,6 +20,6 @@ public class TestActor extends AbstractActor{
     }
 
     public void resTest(TestMes test) throws ScriptException, NoSuchMethodException {
-        getSender().tell( new ResultMes(new TestResult(test.getTest(),doTest(test)), test.getPackageID()));
+        getSender().tell( new ResultMes(new ResultTest(test.getTest(),doTest(test)), test.getPackageID()),noSender());
     }
 }
