@@ -22,7 +22,7 @@ public class TestActor extends AbstractActor{
             ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
             engine.eval(test.getJsScript());
             Invocable invocable = (Invocable) engine;
-            String res = invocable.invokeFunction(test.getFunction(), (Object) test.getTest().getParams()).toString();
+            String res = invocable.invokeFunction(test.getFunction(), test.getTest().getParams()).toString();
         return res;
         }catch (Exception er){
             return er.toString();
