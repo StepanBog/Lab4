@@ -22,15 +22,13 @@ import static akka.http.javadsl.server.Directives.*;
 
 public class Lab4 {
     private ActorRef routerActor;
-    public Lab4(ActorSystem system) {
-    }
 
     public static void main(String[] args) throws IOException {
         ActorSystem system = ActorSystem.create("lab4");
 
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
-        Lab4 instance = new Lab4(system);
+        Lab4 instance = new Lab4();
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
                 instance.createRoute().flow(system, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
