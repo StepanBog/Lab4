@@ -11,7 +11,7 @@ public class ResultMes {
         return result;
     }
 
-    public Test getResTest() {
-        return reTest;
+    public Test getTest() {
+        return Test;
     }
 }

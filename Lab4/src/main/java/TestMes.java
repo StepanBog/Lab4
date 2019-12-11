@@ -22,7 +22,7 @@ public class TestMes {
         return test;
     }
 
-    public Test getPackageID() {
+    public Integer getPackageID() {
         return  packageID;
     }
 }
