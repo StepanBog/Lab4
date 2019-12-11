@@ -11,15 +11,15 @@ public class StoreActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(ResultMes.class,this::getResult)
+                .match(ResultMes.class,this::inputResult)
                 .match(TestMes.class,this::goTest)
                 .build();
     }
 
-    public void getResult(ResultMes res){
+    public void inputResult(ResultMes res){
         List<ResultTest> list = new ArrayList<>();
         list.add(res.getResTest());
-        storage.put(res.getPackegeID(),list);
+        storage.put(res.getPackageID(),list);
     }
     public void goTest(TestMes test){
         sender().tell();
