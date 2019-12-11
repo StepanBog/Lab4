@@ -1,17 +1,17 @@
 public class ResultMes {
-    private Integer packegeID;
-    private Test resTest;
+    private String result;
+    private Test Test;
 
-    public ResultMes( Test  test,Integer packegeID){
-        this.packegeID = packegeID;
-        this.resTest = test;
+    public ResultMes( Test  test,String result){
+        this.result = result;
+        this.Test = test;
     }
 
-    public Integer getPackegeID(){
-        return packegeID;
+    public String getResult() {
+        return result;
     }
 
     public Test getResTest() {
-        return resTest;
+        return reTest;
     }
 }
