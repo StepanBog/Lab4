@@ -5,7 +5,7 @@ public class Test {
     private String expResult;
     private int[] params;
 
-    public Test(@JsonProperty("packageID")String testName, String expResult, int[] params){
+    public Test(@JsonProperty("testName")String testName,@JsonProperty("expResult") String expResult, @JsonProperty("params")int[] params){
         this.expResult = expResult;
         this.params = params;
         this.testName = testName;
