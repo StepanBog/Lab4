@@ -27,6 +27,7 @@ public class Lab4 {
 
     public static void main(String[] args) throws IOException {
         ActorSystem system = ActorSystem.create("lab4");
+
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         Lab4 instance = new Lab4(system);
