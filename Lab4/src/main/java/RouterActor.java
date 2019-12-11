@@ -13,8 +13,13 @@ public class RouterActor extends AbstractActor{
     }
     public AbstractActor.Receive createReceive() {
         return receiveBuilder()
-                .match()
+                .match(TestPackage.class , this :: runTest)
                 .build();
     }
-    public getTest()
+    public getTest(){
+
+    }
+    private void runTest(TestPackage testPackage){
+
+    }
 }
